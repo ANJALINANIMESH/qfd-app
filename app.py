@@ -7,7 +7,7 @@ from plotly.subplots import make_subplots
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="LCA: House of Quality (anjnim)",
+    page_title="manf_opt (anjnim)",
     page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded",
