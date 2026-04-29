@@ -89,7 +89,7 @@ QFD_MATRIX = np.array([
     [9,    0,   3,   9,   9,   3,   0,   0],   # Safety
     [3,    0,   9,   3,   9,   0,   0,   0],   # Fatigue Life
     [3,    0,   1,   0,   3,   9,   0,   0],   # Corrosion Resistance
-    [0,    3,   0,   0,   1,   9,   3,   9],   # Manufacturability
+    [7,    5,   3,   7,   7,   4,   4,   3],   # Manufacturability
 ], dtype=float)
 
 # Manufacturing process scores (rows = processes, cols = tech descriptors)
