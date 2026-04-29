@@ -82,24 +82,28 @@ TECH_DESCRIPTORS = [
 # QFD Relationship matrix  (rows = customer reqs, cols = tech descriptors)
 # Values: 9 = strong, 3 = moderate, 1 = weak, 0 = none
 QFD_MATRIX = np.array([
-    # YS   Den  FS   SS   FR   TC   TlC  CT
-    [9,    0,   9,   9,   3,   1,   0,   0],   # Durability
-    [0,    9,   0,   3,   0,   0,   0,   3],   # Low Weight
-    [0,    0,   0,   0,   0,   3,   9,   9],   # Low Cost
-    [9,    0,   3,   9,   9,   3,   0,   0],   # Safety
-    [3,    0,   9,   3,   9,   0,   0,   0],   # Fatigue Life
-    [3,    0,   1,   0,   3,   9,   0,   0],   # Corrosion Resistance
-    [7,    5,   3,   7,   7,   4,   4,   3],   # Manufacturability
+#   YS Den FS SS FR TC TIC CT
+    [9, 0, 9, 9, 3, 1, 0, 0],   # Durability
+    [0, 9, 0, 3, 0, 0, 0, 3],   # Low Weight
+    [0, 0, 0, 0, 0, 3, 9, 9],   # Low Cost
+    [9, 0, 3, 9, 9, 3, 0, 0],   # Safety
+    [3, 0, 9, 3, 9, 0, 0, 0],   # Fatigue Life
+    [3, 0, 1, 0, 3, 9, 0, 0],   # Corrosion Resistance
+    [0, 3, 0, 0, 1, 9, 3, 9],   # Manufacturability
 ], dtype=float)
 
-# Manufacturing process scores (rows = processes, cols = tech descriptors)
-# Normalised 0-10 capability score
+
+# Manufacturing process capability matrix
+# Rows = processes
+# Cols = technical descriptors
+# Score: 0 to 10
+
 PROCESS_SCORES = np.array([
-    # YS   Den  FS   SS   FR   TC   TlC  CT
-    [9,    7,   8,   8,   6,   5,   4,   5],   # Forging
-    [6,    6,   5,   7,   8,   4,   7,   7],   # Casting
-    [7,    5,   6,   6,   5,   6,   6,   6],   # Welding
-    [8,    6,   7,   7,   9,   9,   5,   4],   # CNC Machining
+#   YS Den FS SS FR TC TIC CT
+    [10, 8, 9, 9, 9, 8, 8, 9],   # Forging
+    [7,  7, 6, 7, 6, 7, 8, 8],   # Casting
+    [6,  6, 5, 6, 5, 8, 7, 7],   # Welding / Fabrication
+    [7,  5, 4, 7, 7, 4, 4, 3],   # CNC Machining
 ], dtype=float)
 
 PROCESSES = ["Forging", "Casting", "Welding", "CNC Machining"]
